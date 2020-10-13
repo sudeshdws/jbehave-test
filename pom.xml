@@ -1,0 +1,130 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+    http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.demo.jbehave</groupId>
+    <artifactId>BDD</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>BDD</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+
+    </properties>
+
+    <build>
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <includes>
+                    <include>**/*.story</include>
+                </includes>
+            </testResource>
+        </testResources>
+
+
+        <plugins>
+            <plugin>
+                <groupId>org.jbehave</groupId>
+                <artifactId>jbehave-maven-plugin</artifactId>
+                <!--                <version>4.3.5</version>-->
+                <version>4.6.1</version>
+                <executions>
+                    <execution>
+                        <id>run-stories</id>
+                        <phase>integration-test</phase>
+                        <configuration>
+                            <includes>
+                                <include>**/*PassengersPolicyScenario.java</include>
+                            </includes>
+                            <scope>test</scope>
+                        </configuration>
+                        <goals>
+                            <goal>run-stories-as-embeddables</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <!--	<dependencies>-->
+
+    <!--        <dependency>-->
+    <!--			<groupId>org.junit.jupiter</groupId>-->
+    <!--			<artifactId>junit-jupiter-api</artifactId>-->
+    <!--			<version>5.0.1</version>-->
+    <!--			<scope>test</scope>-->
+    <!--		</dependency>-->
+    <!--		<dependency>-->
+    <!--			<groupId>org.junit.jupiter</groupId>-->
+    <!--			<artifactId>junit-jupiter-engine</artifactId>-->
+    <!--			<version>5.0.1</version>-->
+    <!--&lt;!&ndash;			<scope>test</scope>&ndash;&gt;-->
+    <!--		</dependency>-->
+    <!--        <dependency>-->
+    <!--            <groupId>org.jbehave</groupId>-->
+    <!--            <artifactId>jbehave-core</artifactId>-->
+    <!--            <version>4.1</version>-->
+    <!--        </dependency>-->
+
+    <!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
+    <!--&lt;!&ndash;            <groupId>org.testng</groupId>&ndash;&gt;-->
+    <!--&lt;!&ndash;            <artifactId>testng</artifactId>&ndash;&gt;-->
+    <!--&lt;!&ndash;            <version>6.9.10</version>&ndash;&gt;-->
+    <!--&lt;!&ndash;&lt;!&ndash;            <scope>test</scope>&ndash;&gt;&ndash;&gt;-->
+    <!--&lt;!&ndash;        </dependency>&ndash;&gt;-->
+    <!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
+    <!--&lt;!&ndash;            <groupId>org.codehaus.groovy</groupId>&ndash;&gt;-->
+    <!--&lt;!&ndash;            <artifactId>groovy-all</artifactId>&ndash;&gt;-->
+    <!--&lt;!&ndash;            <version>2.4.5</version>&ndash;&gt;-->
+    <!--&lt;!&ndash;        </dependency>&ndash;&gt;-->
+    <!--        <dependency>-->
+    <!--            <groupId>io.rest-assured</groupId>-->
+    <!--            <artifactId>rest-assured</artifactId>-->
+    <!--            <version>3.0.2</version>-->
+    <!--&lt;!&ndash;            <scope>compile</scope>&ndash;&gt;-->
+    <!--        </dependency>-->
+    <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.json/json &ndash;&gt;-->
+    <!--        <dependency>-->
+    <!--            <groupId>org.json</groupId>-->
+    <!--            <artifactId>json</artifactId>-->
+    <!--            <version>20190722</version>-->
+    <!--        </dependency>-->
+
+    <!--    </dependencies>-->
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.0.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.0.1</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jbehave</groupId>
+            <artifactId>jbehave-core</artifactId>
+            <version>4.1</version>
+        </dependency>
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>3.0.2</version>
+            <!--            <scope>test</scope>-->
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20190722</version>
+        </dependency>
+    </dependencies>
+
+</project>
